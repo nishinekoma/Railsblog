@@ -1,0 +1,308 @@
+Reactについて
+    概要
+        ・React UIを作ることに特化したJavaScriptの（厳密には）ライブラリ
+        　複雑なUI特化
+        ・フレームワークと誤認する人が多い。
+    特徴
+        ・JavaScript内にHTMLを記述する　（JSX）を記述
+        ・JavaScriptとHTMLの距離が近いためJSONなどのデータをHTMLに
+        　反映することも容易
+        ・データ更新するだけでリアルタイムでHTMLが更新される仕組み。
+        ・仮想DOMという仕組みを「ライブラリ本体に持っている」
+            仮想DOM：仮想DOMは実際のDOMではなくReactが内部的に持っ
+            　　　　　ているDOMの情報(詳細は用語欄に記載。)
+
+
+Library 関連
+Redux Toolkit　：Reduxをより簡潔に使用できるツールキット
+React-Redux　　：Reactアプリケーションで状態管理を行うためのライブラリ
+                 アプリケーション全体でデータを一元管理でき、コンポーネント間でのデータのやり取りがスムーズ
+
+
+
+ReactStorybook
+        what?
+        ・UI component development tools.
+        Major Features(主な特徴)
+        ・Helps you development and design UI compornent in an isolated environment outside of your app
+        ( アプリの外部の隔離された環境で UI コンポーネントを開発および設計するのに役立ちます)
+        ・There are two basic levels of organization components and their child stories.
+        (コンポーネントとその子ストーリーという 2 つの基本的な構成レベルがある。)
+
+Reactの機能
+React Hooksのフックとは
+        ・特徴
+        　　・クラスを使用せずにReact関数を使うことができる機能。
+        　　・クラスを使用して書いていたものを関数だけでしようすることができるようになったらしい。
+        ・メリット
+        　　・。例えば、関数コンポーネントにstateを持たせたり、ライフサイクルに応じた処理を実装したりできる。
+        ・使い方
+        　　ライブラリをインポート使う。　フック：useSelectorとかuseEffectとかの関数。
+                一覧URL：https://udemy.benesse.co.jp/development/react-hooks.html#:~:text=React%20Hooks%E3%81%A8%E3%81%AF%E3%80%81%E3%82%AF%E3%83%A9%E3%82%B9,%E9%96%8B%E7%99%BA%E3%81%AB%E5%BD%B9%E7%AB%8B%E3%81%A6%E3%81%BE%E3%81%97%E3%82%87%E3%81%86%E3%80%82
+用語
+仮想DOM：　・UIの仮想表現をメモリー内に保持して　実際のDOMと同視させるという
+　　　　　　　プログラミング概念　
+　　　　　　・このコンセプトはReactによって開拓 
+        　　・必要な部分しか更新されてないため非常に高速に動作する
+　　　　　　　　　　　　　　　　　　　　　　　　　
+
+仮想ノード(vノード): 仮想ファイいるシステム何のオブジェクトへのアクセスを表します。
+        Vノード：パス名を汎用ノード(gノード)に変換するためのみに使用される。
+
+マウント：ランタイムのレンダラー仮想 DOM ツリー内を走査して、実際の 
+　　　　　DOM ツリーを構築することができます。
+
+パッチ（差分・リコンシリエーション）；
+        仮想 DOM ツリーのコピーが 2 つある場合、レンダラーは 2 つのツリーを走査して比較し、
+　　　　　その違いを把握して、その変更を実際の DOM に適用することもできます。
+
+レジストリ：Windowsのシステムやソフトウェアの設定に関する情報が
+        　記録されているファイル
+モックする　機能を呼び出して模倣することを指す。
+
+Jsでの関数 = オブジェクトの一つである。
+
+Handling　（。。。に対して）　処理をすること。
+HMR(Hot Module Replacement)JavaScriptのフレームワークであるWebpackやParcelなどで使用される機能の一つ。 
+
+() 丸括弧　バーレン　
+{} 波括弧　ブレイス、カーリーブランケット
+[] ブランケット、角括弧
+/---*programming syntax for js and jsx*---/
+    ・<span />　の　/>は　子要素　<span>これは子要素です</span>　のやつを持たないで自己終了する。
+
+	・arrow functino アロー関数　Javaでいうラムダみたいなやつ
+		　デフォルト
+		　const add = function(a,b) { return a + b;};
+		
+		　・アロー関数使用時
+		　const add = (a,b) => a + b;
+
+	・オブジェクト分割代入について{} 　デェスクトラクチャリング　Destructuring assignment
+		分割代入は、プロパティ名と同じ名前で変数を定義するときに、プロパティ名を2度書かないで済むのがひとつの利点です。
+		例　〇　const { error }  = useSelector((state) => state.taskbox);
+		　　✖　const { error }  = useSelector((state) => state.taskbox.error);
+			例code
+			const myObject = {
+					key1: 'value1',
+					key2: 'value2',
+					key3: 'value3',
+					};
+			取り出す
+					const { key1, key3 } = myObject;
+
+					console.log(key1); // 'value1'
+					console.log(key3); // 'value3'
+
+	・コールバック関数について　参考リンク：　https://tcd-theme.com/2022/04/javascript-callback-function.html
+			コールバック関数 : ある関数を呼び出す際、その関数の引数に指定される別の関数のこと。
+			高階関数　：　コールバック関数を受け取ったり返したりする関数のことを高階関数という。
+
+			function 高階関数(コールバック関数) {
+					コールバック関数
+			}
+
+			例code1
+			//高階関数　→　funcBを引数に受け入れる
+			function funcA(text) {
+					text(); //funcB
+					console.log('メッセージを受け取りました。'); //funcAの処理
+			}
+
+			//コールバック関数　→　funcAの呼び出し時に引数に指定される。
+			function funcB() {
+					console.log('こんにちわ');
+			}
+
+			//funcAの呼び出し → 引数にfuncBを指定
+			funcA(funcB)
+
+			例code2
+			引数に直接関数を記述する。
+			function funcA(text) {
+					text();
+					console.log('メッセージを受け取りました。');
+			}
+			//funcAの呼び出し → 引数に関数式を定義。
+			funcA(function() {
+					console.log('こんにちは');
+			});
+			//こんにちは
+			//メッセージを受け取りました。
+
+			例code3 = 例code1 and 例code2　をアロー関数に改造。
+			const funcA = (text) => {
+					text();
+					console.log('メッセージを受け取りました。');
+			}
+			//funcAの呼び出し→引数にアロー関数を定義
+			funcA(() => {
+					console.log('こんにちは');
+			});
+
+			//こんにちは
+			//メッセージを受け取りました。
+			//解説
+			　まずfuncAを定義する。その時textという関数を受け取るのと、メッセージを受け取りました。と表示される。
+			　次にfuncAないにアロー関数をぶち込んでいる。
+			　この時  funcA(アロー関数)　アロー関数を処理してからtextという仮引数で代入される。
+			　その後funcA自体が動き、textという仮引数の関数が働き、その後console.log('メッセージを受け取りました')が実行される。
+	
+	・スプレッド構文 ...変数名
+	　const numbers = [1, 2, 3];
+	　console.log(...numbers);//result 1,2,3
+
+	JavaScriptについて
+		・Jsはシングルスレッド。
+			・元々同期処理で、「UIスレッド」と呼ばれるメインスレッド上で処理を１つ１つ順番に実行していくことしかできないが
+			　JavaScriptでは、同時に複数の処理を行うことができない代わりに、時間のかかる処理が完了するまでの間、他の処理を進めていくことができる。
+			　これを非同期処理と言います。
+			非同期処理の対象になる例
+			・ネットワークリクエスト
+			・ファイルI/O
+			・データベースアクセス
+			・タイマーイベント
+		・非同期処理
+			・jsの非同期処理は
+				・コールバック　https://knowledge.sakura.ad.jp/24888/
+				|	・Node.jsの標準ライブラリでの採用されている一つ。　
+						処理が終わったら指定した関数が呼ばれる。
+				・Promise
+				・async/await
+				の三つがある。
+/---*programming syntax for typescript*---/
+	・拡張子 .ts
+	・変数宣言の型注釈
+		用法
+		　・変数宣言するときにその変数にどんな値が代入可能かを指定できる。　←　型注釈(type annotation; 型アノテーションという。)
+		　　注釈の意味：　あらゆる形態のdataに　タグやメタデータの情報をつけていくこと。
+		例code
+			const num : number = 123;
+
+英語
+on 何かの表面の上を示す場合に使われるこの構文では、HTTPメソッドやパス、コントローラーおよびアクションの指定がハッシュのキーと値としてセットされています。:as オプションはこのルートに名前を付け、ルートヘルパーを生成します。これにより、rails_health_check_path や rails_health_check_url のようなヘルパーメソッドが生成され、コード内で簡単にこのルートへのパスやURLを参照できます。
+
+
+2 / 2
+
+
+
+
+
+complicated（コンプリケエド）複雑化な、
+~hood（フッド）※接頭辞等 状態、性質、集団
+    例　child hood 子供の状態　
+advanced(アェドバンシィド)形容詞：高度な
+ever(エバー)副詞：常に、ずっと、いつまでも、いつも、コア：かつて
+available(アバェアブォル)利用することができる。、入手できる。
+details(データイルズ)詳細
+required(リクアイヤド)形容詞：必須、必須の
+new 真新しいというニュアンス
+recent(リーセント) 最近起こった出来事などでつかわれる新しい
+latest(レィテスト)最新　late(最近の)の最上級　最も最新な情報のnuance
+isolated(アイソリティッド)形容詞:隔離された、絶縁した、孤立した
+peripheral(ペリフェラル)周辺的な、周囲の、周辺装置
+methodology(メソドロジィイ)名詞：方法論
+Each(イーチ)各自の、各、それぞれの
+slightly(スライグスリィ)副詞：わずかに、若干、少し、
+internally(インターナリィ)内部で、内面的に
+placeholder何も入力されていない状態のテキスト入力欄に最初から薄く表示されている案内文字 ※仮に確保する会議通知当。
+specify(スペシフィ)※指定する、明確に述べる、特定する　特定する
+shape(シェープ)　形状　コア:物の外形
+Shaping()形成する。
+expect(エクスペクトッ)動詞:期待する、予期する 
+Unexpected(アンエクスペクティッド)予想外の、
+composition(コンポジション)構成、組み立てる
+unmet(アンメット)いまだ満たされていない
+accompanying(アカンパニィング)※付随する、同行する
+Inherited(インヘリテェッド)動詞：受け継ぐ、継承の意味がある。　今回は継承された
+arbitrary(アァㇻバタァリィ)任意の、勝手な、　
+Row(ロウ)列
+empty(エンプティ)コア：中身が空の
+export(エクスポート)動詞：(...へ)輸出する、(外に)伝える
+anything(エ二シィング)何も
+external(エクスターナル)コア：外用の　外部の、文脈ではパソコンの外で使うものHDを示すときに　外用を示す。
+effective(エフェクティブ)効果的な、有効な
+fetch(フェッチ)取り出す、取ってくる、参照アクセス
+inbox(インボックス)到着した書類入れ。
+idle(アイドル)仕事のない、暇な、根拠のない
+with(ウィズ)「～を持つ」「～を使う」「～を伴って」「関連　～について」「」「」
+Reducer(リディュウサー)Reduxアプリケーションで状態の変更を処理する純粋な関数です。
+contained(コンテイニィッド)含まれた、抑制した、静かな、自制した、
+usage(ユーシジ)名詞：使う行為。　使用法
+retrieving(リトライビング)を取り戻す、回収する（している）
+dispatch(ディスパッチ)発送する、派遣する　ITでは同種の複数の対象から一つを呼び出したり、データの送信を意味する。
+day()曜日
+date()日付
+corresponding(コレスポンディング)　一致する、対応する、 ※　ほかの何かと一致する、または同等のものを指す。
+correspond(コレスポンド)　一致する、符合する、該当する
+combine(コンバイン)動詞：(...を)組み合わせる、合併させる、結びつける。結合して
+extract(エクストラクト)　抽出する、取り出す、抜く
+await(アウェイト) (...を)待つ、待ち構えている。
+reject(リジェクト)却下する、拒絶する、
+Represent(リプレゼント)意味する、意義がある、代表する、代理する。　※堅苦しい言い方。
+Representing(リプレゼンティング)表現している　
+eventual(イベンチャル)形容詞：結果としておきる、最後の、結局の、
+failure(フェアリアァー)失敗、不成功
+operation(オペレーション)操作
+Essentially(エッセンシャリィ)副詞基本的に、（本質的な感じで使う。　根はいい子の意味で基本的とか。）
+neste(ネスト)この中で
+nested(ネスティッド)入れ子になった。
+determine(デタァ‐ミン)動詞：決心する、決意する、判決する。
+disabled(ディザァブリィド)IT：無効にする
+assignable(アッサイナブル)形容詞：割り当て可能、指定される、譲渡されうる。
+following()以下の、次に続く、次の
+denied(ディナイド)動詞：　拒否された
+Permission(パーミッション)許可、承諾、許し
+
+
+熟語
+under the hood 何かがどのように機能するかの背景を示すことを意味する
+                内部というイメージ
+get start OK! Let's start!"よりもテンションが高い感じ Getを付ける場合、単にstartするよりも、勢いをつけて始める
+
+wire in data 内部にデータを接続する。　簡単に言うと　データを内部に組み込むという感じ。
+So far これまでのところ
+would be なになにだろう。とか仮定されるときに使われたりする。
+文法
+To + 動詞の原形　https://www.shane.co.jp/column/detail/id=45561#:~:text=%E6%96%87%E6%B3%95%E3%81%AFto%EF%BC%8B%E5%8B%95%E8%A9%9E%E3%81%AE,%E7%B5%90%E6%9E%9C%E3%82%92%E8%A1%A8%E7%8F%BE%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99%E3%80%82
+        ・ 名詞的用法「～すること」　　　　　　　　　　不定詞で始まる語句が名詞の働きをして、主語や補語、目的語の役割を果たしています。　
+        ・ 形容詞的用法「～するための」
+        ・副詞的用法「～するために」、「～して　　　　目的、原因や結果を表現
+
+as 
+	前置詞と接続詞の違い　見分け
+	前置詞：次に来るのが　名詞　や　-ing系などの句。
+		・as = ～として　～のように
+	接続詞：次に来るのが、　主語＋名詞
+		・as = ～ので　～のとき　～のように
+	
+	慣用句
+	as ~ as ... (...と同じくらい～)
+
+in について
+A in the B
+A　が　B　の中に存在していることを示す。
+
+時間的な期間を示す場合:
+"I will do my homework in the evening."（夕方に宿題をします。）
+
+場所を指定する場合:
+"I found the information in the documentation."（ドキュメント内で情報を見つけました。）
+
+方法や手段を指定する場合:
+"She fixed the issue in three simple steps."（彼女は3つの簡単な手順で問題を修正しました。）
+品詞
+副詞：修飾する　「動詞や形容詞や副詞」　のこの構文では、HTTPメソッドやパス、コントローラーおよびアクションの指定がハッシュのキーと値としてセットされています。:as オプションはこのルートに名前を付け、ルートヘルパーを生成します。これにより、rails_health_check_path や rails_health_check_url のようなヘルパーメソッドが生成され、コード内で簡単にこのルートへのパスやURLを参照できます。
+
+
+2 / 2
+
+
+
+
+すぐ前に置くと間違いがありません。
+用語
+yarn :javascriptパッケージの依存関係を行うパッケージツール
+
+Todo
