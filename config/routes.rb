@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  root "articles#index"
+  root "articles#index"#localhost:3000
 
   get "/articles", to: "articles#index"
+  get "/articles/:id", to: "articles#show"
 end
 
 Rails.application.routes.draw do

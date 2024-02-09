@@ -22,9 +22,17 @@ Webpacker 　　CSS、JavaScript、画像などを１つのファイルとして
             　バンドラーで、node.jsのモジュールの1つ
 モジュールバンドラー　ウェブアプリケーションの開発において、複数のモジュールやファイル
                     　をまとめて1つのファイルに結合するツール
+
 バンドル    複数のファイルやリソースのまとまり
-domain 領域　特定のプログラミングプロジェクトの対象主題を表す。　https://en.wikipedia.org/wiki/Domain_(software_engineering)
+
+domain（ドメイン） 領域　特定のプログラミングプロジェクトの対象主題を表す。　https://en.wikipedia.org/wiki/Domain_(software_engineering)
+
 ルート　Railsアプリケーション内で受け入れられるHTTPリクエストのパスとそれに関連するコントローラーアクションとを関連付ける設定
+
+CRUD (Create, read, update and delete
+        作成、読み取り、更新、削除)
+
+
 /---*用語　ネット関係*---/
 リッスンアドレス　ポート番号を開いて外部からの接続を待っている状態。
 
@@ -51,7 +59,12 @@ http://127.0.0.1:3000
     
     ・ブロック演算子 |t| https://rails-study.net/proc-block/
 
-
+    /---*programming syntax for ERB*---/
+    ERB(mbedded Ruby)
+        ・HTMLなどのテキストにRubyのスクリプトを埋め込むためのライブラリです。
+        ・ドキュメントに埋め込まれた Ruby コードを評価するテンプレート システムです。
+    <% %>タグ
+        ・囲まれたRubyコードを評価し、その戻り値を出力する
 EXECJS_RUNTIME=Node //RubyスクリプトからJsのコード実行できる。
 
 
@@ -90,4 +103,3 @@ For 目的語
     がある。
 
 At the moment　ちょうど今、目下、　ニュアンス　：nowより硬い
-
