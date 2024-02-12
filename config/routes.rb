@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   root "articles#index"#localhost:3000
 
-  get "/articles", to: "articles#index"
-  get "/articles/:id", to: "articles#show"
+  resources :articles do # 記事などのリソースのコレクションに対する従来のルートをすべてマップする、という名前のルート メソッドを提供します
+    resources :comments
+  end
+    #get "/articles", to: "articles#index"
+    #get "/articles/:id", to: "articles#show"
 end
 
 Rails.application.routes.draw do
