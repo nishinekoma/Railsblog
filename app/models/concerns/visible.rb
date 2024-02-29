@@ -1,18 +1,18 @@
 module Visible
-  extend ActiveSupport::Concern
+  extend ActiveSupport::Concern#クラスメソッドもincludeに入れる便利なやつ。
 
   VALID_STATUSES = ['public', 'private', 'archived']
   
-  included do
+  included do #モジュールがincludeされた後にこのメソッドが動作する
     validates :status, inclusion: {in: VALID_STATUSES }
   end
 
-  class_method do
+  class_methods do #クラスメソッドとして利用できるようにする。
     def public_count
-      where(status: 'public').count
+      where(status: 'public').count#
     end
   end
-  
+
   def archived?
     status == 'archived'
   end

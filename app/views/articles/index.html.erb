@@ -5,7 +5,7 @@ and counting!
 
 <ul>
   <% @articles.each do |article| %>
-    <% unless article.archived? %>
+    <% unless article.archived? %><%# unless :falseだったら実行。 　%>
       <li>
         <%= link_to article.title, article %>
       </li>
