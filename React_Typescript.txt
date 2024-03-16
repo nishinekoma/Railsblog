@@ -164,10 +164,9 @@ HMR(Hot Module Replacement)JavaScriptのフレームワークであるWebpackや
 			・タイマーイベント
 		・非同期処理
 			・jsの非同期処理は
-				・コールバック　https://knowledge.sakura.ad.jp/24888/
-				|	・Node.jsの標準ライブラリでの採用されている一つ。　
-						処理が終わったら指定した関数が呼ばれる。
-				・Promise
+				・コールバック　https://knowledge.sak
+    ・::  https://qiita.com/hatorijobs/items/87a2bd93f8666d77d711
+        ・メソッドや定数を呼び出す際にダブルコロンが使われる。
 				・async/await
 				の三つがある。
 /---*programming syntax for typescript*---/
@@ -295,8 +294,6 @@ A　が　B　の中に存在していることを示す。
 品詞
 副詞：修飾する　「動詞や形容詞や副詞」　のこの構文では、HTTPメソッドやパス、コントローラーおよびアクションの指定がハッシュのキーと値としてセットされています。:as オプションはこのルートに名前を付け、ルートヘルパーを生成します。これにより、rails_health_check_path や rails_health_check_url のようなヘルパーメソッドが生成され、コード内で簡単にこのルートへのパスやURLを参照できます。
 
-
-2 / 2
 
 
 

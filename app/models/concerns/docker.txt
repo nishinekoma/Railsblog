@@ -1,0 +1,17 @@
+How way to install for docker.
+https://kinsta.com/jp/blog/install-docker-ubuntu/
+
+$ sudo apt update//既存のパッケージ更新。
+$ sudo apt install ca-certificates curl gnupg lsb-release//
+
+ubuntu CLI 
+現在のDockerの設定情報を表示する方法：
+docker info
+
+docker info
+自分のユーザ名を表示させる方法：
+whoami
+
+どんな権限が付与されているかを表示する方法：
+groups
+
